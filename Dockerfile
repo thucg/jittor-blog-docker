@@ -7,9 +7,7 @@ RUN apt-get update && \
         apt-get install --no-install-recommends -y build-essential git ruby-bundler ruby-dev zlib1g-dev && \
         rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/zhouwy19/jittor-blog.git /srv/jittor-blog --single-branch && \
-        cd /srv/jittor-blog && \
-        git reset --hard d3fed1800d271bf4a406cd5f1cacf52b9bfccd32
+COPY Gemfile /srv/jittor-blog/Gemfile
 
 WORKDIR /srv/jittor-blog
 

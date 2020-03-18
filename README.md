@@ -8,7 +8,7 @@ docker build . -t jittor-blog
 
 First run
 ```
-docker run --restart unless-stopped --network cgservice_frontend --name jittor-blog -d jittor-blog
+docker run -v "${HOME}/Documents/jittor-blog":/srv/jittor-blog --restart unless-stopped --network cgservice_frontend --name jittor-blog -d jittor-blog
 ```
 
 Update and restart
