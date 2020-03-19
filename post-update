@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+cd ~/Documents/jittor-blog
+unset GIT_DIR
+git fetch local master
+git reset --hard local/master
+docker run -v "${HOME}/Documents/jittor-blog":/srv/jittor-blog -v cgservice_jittor-blog:/mnt/jittor-blog --rm jittor-blog-compiler

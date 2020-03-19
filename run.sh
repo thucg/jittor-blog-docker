@@ -1,2 +1,2 @@
 #!/bin/bash -ex
-LC_ALL="C.UTF-8" jekyll serve --host=0.0.0.0 --port=80 --baseurl=/jittor
+LC_ALL="C.UTF-8" jekyll build --baseurl=/jittor -d /mnt/jittor-blog/

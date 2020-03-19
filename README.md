@@ -3,24 +3,17 @@
 Build
 
 ```
-docker build . -t jittor-blog
+docker build . -t jittor-blog-compiler
 ```
 
-First run
+Update site
 ```
-docker run -v "${HOME}/Documents/jittor-blog":/srv/jittor-blog --restart unless-stopped --network cgservice_frontend --name jittor-blog -d jittor-blog
-```
-
-Update and restart
-```
-docker restart jittor-blog
+docker run -v "${HOME}/Documents/jittor-blog":/srv/jittor-blog -v cgservice_jittor-blog:/mnt/jittor-blog --rm jittor-blog-compiler
 ```
 
-If you have changed run.sh, please
+If you have changed any file in this directory, please build again.
+
+Install hook
 ```
-git commit
-git push
-docker build ...
-docker stop jittor-blog
-docker run ...
+cp post-update ~/Documents/jittor-blog.git/hooks/post-update
 ```
